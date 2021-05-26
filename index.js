@@ -13,7 +13,7 @@ const app = express();
 app.use(formidable());
 app.use(cors());
 app.use(morgan("dev"));
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-database", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vinted", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -40,6 +40,8 @@ app.all("*", (req, res) => {
   res.status(404).json({ error: "This route dosn't existe" });
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server Started");
 });
+
+// process.env.PORT

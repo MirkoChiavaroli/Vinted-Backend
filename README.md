@@ -1,2 +1,1 @@
-# Vinted-first
-# Vinted-Backend
+## Vinted-Backend
