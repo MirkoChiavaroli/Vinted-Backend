@@ -13,11 +13,14 @@ const app = express();
 app.use(formidable());
 app.use(cors());
 app.use(morgan("dev"));
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/vinted", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || "https://vinted-backend-first.herokuapp.com/",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  }
+);
 
 // config Cloudi > .env
 cloudinary.config({
