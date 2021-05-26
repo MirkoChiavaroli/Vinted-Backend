@@ -51,7 +51,7 @@ router.post("/user/signup", async (req, res) => {
         res.status(400).json({ message: "Missimg parameters" });
       }
     } else {
-      res.status(409).json({ message: "This email already existe" }); //se gia esiste un user
+      res.status(409).json({ message: "This email already existe" });
     }
   } catch (error) {
     res.status(400).json({ error: error.message });
